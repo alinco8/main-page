@@ -1,0 +1,100 @@
+* {
+    margin: 0;
+}
+
+#root {
+    display: flex;
+
+    & > div:nth-child(2) {
+        form {
+            & > div {
+                display: flex;
+                border: 1px solid #444;
+
+                svg {
+                    color: #777;
+                    margin: 4px;
+                }
+                input {
+                    display: block;
+                    border-style: none;
+                }
+            }
+        }
+        #output {
+            td {
+                text-align: center;
+            }
+        }
+    }
+
+    #nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        background: #00f;
+        width: 4vw;
+        height: 100vh;
+
+        & > div:nth-child(2) {
+            padding: 10px;
+            .setting {
+                font-size: 3vw;
+                color: #fff;
+                transition: transform 0.3s;
+
+                &:hover {
+                    transform: rotate(60deg);
+                }
+            }
+        }
+    }
+}
+
+.switch {
+    --padding: 3px;
+    --width: 60px;
+    display: flex;
+    background: rgb(255, 99, 99);
+    width: var(--width);
+    height: 35px;
+    transition: background 0.3s;
+    align-items: center;
+    border-radius: 20px;
+
+    div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #fff;
+        border-radius: 20px;
+        width: calc(35px - var(--padding) * 2);
+        height: calc(35px - var(--padding) * 2);
+        transform: translateX(var(--padding));
+        transition: transform 0.3s cubic-bezier(0.18, 0.89, 0.35, 1.15);
+
+        &::after {
+            content: 'OFF';
+            font-size: x-small;
+            font-weight: bold;
+            color: #f00;
+            transition: color 0.3s;
+        }
+    }
+    &:has(input:checked) {
+        background: rgb(99, 255, 99);
+
+        div {
+            transform: translateX(calc((var(--width) - (35px - var(--padding)))));
+
+            &::after {
+                content: 'ON';
+                color: #0f0;
+            }
+        }
+    }
+    input {
+        display: none;
+    }
+}
