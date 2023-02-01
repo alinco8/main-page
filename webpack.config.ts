@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CleanTerminalPlugin = require('clean-terminal-webpack-plugin');
 const path = require('path');
 
 module.exports = (env, args) => {
@@ -7,7 +8,11 @@ module.exports = (env, args) => {
     const rules = [
         {
             test: /\.tsx?$/,
-            use: ['ts-loader'],
+            loader: 'esbuild-loader',
+            options: {
+                loader: 'tsx',
+                target: 'es6',
+            },
             exclude: /node_modules/,
         },
         {
@@ -18,7 +23,7 @@ module.exports = (env, args) => {
 
     return {
         devtool,
-        entry: './src/index.tsx',
+        entry: ['./src/index.tsx'],
         output: {
             path: path.join(__dirname, './public/'),
             filename: 'bundle.js',
@@ -35,6 +40,7 @@ module.exports = (env, args) => {
             new MiniCssExtractPlugin({
                 filename: 'style.css',
             }),
+            new CleanTerminalPlugin(),
         ],
     };
 };

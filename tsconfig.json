@@ -1,12 +1,27 @@
 {
     "compilerOptions": {
         "target": "ES6",
-        "module": "ES6",
+        "module": "Node16",
         "esModuleInterop": true,
         "jsx": "react",
-        "moduleResolution": "Node"
+        "moduleResolution": "Node",
+        "declaration": true,
+        "declarationMap": true,
+        "typeRoots": [
+            "src/@types",
+            "node_modules/@types"
+        ],
+        "strict": true,
+        // "alwaysStrict": false,
+        "noImplicitAny": false,
+        // "noImplicitThis": false,
+        // "strictBindCallApply": false,
+        // "strictFunctionTypes": false,
+        // "strictNullChecks": false,
+        // "strictPropertyInitialization": false,
+        // "useUnknownInCatchVariables": false,
     },
     "include": [
-        "./src"
+        "./src",
     ]
 }

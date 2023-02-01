@@ -1,7 +1,7 @@
 import React from 'react';
-import Switch from '../components/Switch';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import Switch from '@mui/material/Switch';
+import Table from '@mui/material/Table';
+import { Search } from '@mui/icons-material';
 
 function Setting() {
     return (
@@ -12,11 +12,13 @@ function Setting() {
                 onSubmit={(e: React.FormEvent<HTMLFormElement>) => {
                     e.preventDefault();
                     const form = e.target as HTMLFormElement;
-                    const q = form.querySelector('[name=q]') as HTMLInputElement;
+                    const q = form.querySelector(
+                        '[name=q]'
+                    ) as HTMLInputElement;
                 }}
             >
                 <div>
-                    <FontAwesomeIcon icon={faSearch} />
+                    <Search />
                     <input type="text" name="q" />
                 </div>
             </form>

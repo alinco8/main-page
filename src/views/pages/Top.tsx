@@ -1,12 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
-import Switch from '../components/Switch';
 
 function Top() {
-    const [s, setS] = '';
     return (
         <div>
-            <div>{}</div>
-            <div>{}</div>
+            <form method="POST" action="/login">
+                <input type="text" name="id" placeholder="id" />
+                <input type="text" name="password" placeholder="password" />
+                <button type="submit">Submit</button>
+            </form>
         </div>
     );
 }

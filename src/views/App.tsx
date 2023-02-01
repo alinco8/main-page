@@ -1,16 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, Router } from 'react-router-dom';
+import {} from '@mui/icons-material';
 
 import Top from './pages/Top';
 import Setting from './pages/Setting';
-import Navigator from './components/Navigator';
 import NotFound from './pages/NotFound';
+import Header from './components/Header';
+import Navigator from './components/Navigator';
 
 function App() {
     return (
         <>
             <BrowserRouter>
-                <Navigator />
+                <Header />
                 <Routes>
                     <Route path="/" element={<Top />} />
                     <Route path="/setting" element={<Setting />} />

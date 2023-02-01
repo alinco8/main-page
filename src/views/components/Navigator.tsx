@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGear } from '@fortawesome/free-solid-svg-icons';
+// import  from '@mui/material';
+import { SettingsApplications } from '@mui/icons-material';
 
 function Navigator() {
     return (
@@ -9,7 +9,7 @@ function Navigator() {
             <div></div>
             <div>
                 <Link to={'/setting'}>
-                    <FontAwesomeIcon className="setting" icon={faGear} />
+                    <SettingsApplications />
                 </Link>
             </div>
         </div>

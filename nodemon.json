@@ -1,0 +1,9 @@
+{
+    "exec": "node server.js",
+    "watch": [
+        "./server.js"
+    ],
+    "events": {
+        "start": "cls"
+    }
+}
